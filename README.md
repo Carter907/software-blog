@@ -30,7 +30,6 @@ This blog is built with modern web technologies:
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) for responsive, utility-first design
 - **Content**: [Contentlayer](https://www.contentlayer.dev/) for type-safe MDX content management
 - **Deployment**: [Vercel](https://vercel.com/) for seamless continuous deployment
-- 
 
 ## Development
 
