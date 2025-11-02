@@ -1,0 +1,49 @@
+---
+title: HTTPie & Web Testing
+date: 2025-11-02
+tags:
+  - cybersecurity
+  - programming
+  - cli
+  - bash
+  - linux
+  - knowledge-recap
+draft: "true"
+summary: You should use HTTPie to test out your next web app.
+---
+
+### What is HTTPie?
+
+HTTPie is a user-friendly command-line tool for viewing the metadata of your web requests. HTTPie is a flexible tool with many use-cases, but I tend to use it to test the functionality of my web endpoints from the terminal.
+
+Instead of making requests implicitly using your web browser, requests through HTTPie are transparently echoed back to you so that you never have to guess what is happening under the hood.
+
+The following is a basic HTTPie call:
+
+```
+http :8080/home
+```
+
+This command makes a GET request to `http://localhost:8080/home`.
+
+As you can see, the syntax of HTTPie can be concise and powerful.
+
+By default the information that's printed is only about the request sent, but if you want to see the entire exchange, you can use the `-v` flag.
+
+Here is an example output:
+```
+GET /tickets HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Host: localhost:8000
+User-Agent: HTTPie/3.2.4
+
+
+
+HTTP/1.1 307 Temporary Redirect
+content-length: 0
+date: Sun, 02 Nov 2025 20:14:56 GMT
+location: http://localhost:8000/tickets/
+server: uvicorn
+```
