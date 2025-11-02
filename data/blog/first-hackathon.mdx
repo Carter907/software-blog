@@ -12,30 +12,30 @@ summary: Read about my experience and draft notes on my first ever hackathon!
 
 Today on April 6th, 2025, I worked with some undergrads on a programming project! It was my first ever hackathon and it turns out It would be a wild and interest ride. I was faced with some unfortunate and novel challenges that I hadn't come across before, or even considered.
 
-### My Personal Plan
+### A Team Effort
 
-Okay so we need to use the Canvas API some how
+My goal for this project was to come at the requirements from a unique and interesting angle. I wanted to also learn about the different operations you could do with the Canvas API. Because of my experience, I was naturally the leader of the group, but that also meant I was placed under more pressure to try and make sure everyone knew the applications of my ideas.
 
-**Issues**
+I had to learn how to put theory into understandable terms. It wasn't easy making sure everyone had a role that they understood. Communication skills were something I learn a lot about throughout this experience.
 
-- endpoints are authenticated with access tokens
-- OAuth2 utilization requires Canvas Admins to register the apps
-    - this means we can't actually use this behavior in any application afaik
-    - i guess there is potentially some way to get developer registration access? I need to contact the IT department...?
-- Another option is to create a cli application and have the user specify their access tokens via an environment variable. This is honest probably our best option. Someone groups might make the mistake of creating a website utilizing the API, but this isn't best practices and it's not practical.
-- However, I don't think the judges are savey enough to care about that.
+We really struggled on committing to a project at first. I wanted to make a dashboard application that could read the user's grades, assignments, and classes to create a centralized status board. However, it was hard to prove to the others that we could really make it something special and unique. 
 
+At this point time was running. We spent hours trying to come up with a plan; we were in gridlock. After we all took a lunch break to unwind, I believe we all realized that we had to make something work so we set out to complete the Canvas dashboard.
 
-**Plan**
-- create grade planner command line application for USF students.
-- tech
-    - bubbletea
-    - go langchain
-        - This will be use to for structured input using the Ollama and Docker
-        - structured into will be used to create different plans for
+We decided to make this application using Flask with the Jinja2 templating library. Using Python in these hackathons seemed like a necessity due to it's ease-of-use and it's concise syntax. It's also a language that everyone in the group was comfortable using to an extent.
 
+### Exploring the API
 
-### What we actual went with
+As much as I love coding, testing API functionality without fully grasping the documents can be a bit tedious at times. I learned that you need some way to get an access token from the user in order to request data on their behalf.
 
-We decided to use the Canvas API -- mainly because nobody else really had any idea. However, we really struggled on committing to a project at first. Nobody was exactly happy with my vague notions of an application. This was a very stressful moment for me because I really wanted to get started, but I knew I wasn't communicating my ideas fully. During lunch, we decided to split up and regroup afterward. I took the time to formulate a plan during the intermission. My plan was received positively from my teammates which was a relief -- I was on the verge of saying, "beggars can't be choosers!".
+This was simple enough to do with my own token, but I had to get creative in order to make this secure in production. At first, I made the mistake of manually asking the user to generate a token and use it in the application, but it turns out that's actually a [violation of the Canvas API Policy](https://mitt.uib.no/doc/api/file.oauth.html#:~:text=For%20testing%20your,to%20obtain%20tokens.)!
 
+While I handled, this the internals of the API, I tasked my teammates with completing the frontend together in the best way they know how. I wanted to leave it flexible and then I would try to integrate it near the end of our development.
+
+This felt like the best option because it allowed them to be comfortable developing and it allowed me to only focus on the backend.
+
+### Conclusion
+
+We were all just a rag-tag team of undergrads, and that day was the very first day we met so the chances that we would form strong friendships with one another wasn't a guarantee. However, we managed to pull off a pretty impressive project that I did end up presenting.
+
+While it wasn't in a perfect state, I felt that everyone had contributed in some meaningful way. We also learned a lot along the way about security and cooperation among developers.
